@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-public class Shortcut implements Serializable {
+public class Link implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -26,7 +26,7 @@ public class Shortcut implements Serializable {
 
     private Integer cuttedLink;
 
-    private LocalDateTime validity;
+    private LocalDateTime creationDate;
 
     private String uncuttedLink;
 
@@ -46,21 +46,21 @@ public class Shortcut implements Serializable {
         this.cuttedLink = cuttedLink;
     }
 
-    public LocalDateTime getValidity() {
-        return validity;
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
-    public void setValidity(LocalDateTime validity) {
-        this.validity = validity;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public Shortcut() {
+    public Link() {
     }
 
-    public Shortcut(Integer id, Integer cuttedLink, LocalDateTime validity, String uncuttedLink) {
+    public Link(Integer id, Integer cuttedLink, LocalDateTime creationDate, String uncuttedLink) {
         this.id = id;
         this.cuttedLink = cuttedLink;
-        this.validity = validity;
+        this.creationDate = creationDate;
         this.uncuttedLink = uncuttedLink;
     }
 
@@ -68,8 +68,8 @@ public class Shortcut implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Shortcut shortcut = (Shortcut) o;
-        return Objects.equals(getId(), shortcut.getId());
+        Link link = (Link) o;
+        return Objects.equals(getId(), link.getId());
     }
 
     @Override
