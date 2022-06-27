@@ -2,7 +2,7 @@ package com.test.shortener.resources;
 
 
 import com.test.shortener.domain.Link;
-import com.test.shortener.resources.services.LinkService;
+import com.test.shortener.services.LinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-import static com.test.shortener.resources.services.Validating.isValid;
+import static com.test.shortener.services.Validating.isValid;
 
 @RestController
 @RequestMapping

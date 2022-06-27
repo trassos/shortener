@@ -1,4 +1,4 @@
-package com.test.shortener.resources.services;
+package com.test.shortener.services;
 
 import org.springframework.stereotype.Service;
 
