@@ -44,7 +44,7 @@ public class LinkResource {
         link = linkService.create(link);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(link.getId()).toUri();
         Integer site = link.getCuttedLink();
-        return ResponseEntity.created(uri).body("http://localhost:8080/" + site);
+        return ResponseEntity.created(uri).body("https://trassosshortener.herokuapp.com/" + site);
 
     }
 
