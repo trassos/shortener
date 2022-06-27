@@ -2,7 +2,7 @@ package com.test.shortener.resources;
 
 
 import com.test.shortener.domain.Link;
-import com.test.shortener.services.LinkService;
+import com.test.shortener.resources.services.LinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-import static com.test.shortener.services.Validating.isValid;
+import static com.test.shortener.resources.services.Validating.isValid;
 
 @RestController
 @RequestMapping
@@ -39,11 +39,13 @@ public class LinkResource {
     }
 
     @PostMapping
-    public ResponseEntity<String> create (@RequestBody Link link) {
+    public ResponseEntity<String> create(@RequestBody Link link) {
+
         link = linkService.create(link);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(link.getId()).toUri();
         Integer site = link.getCuttedLink();
-        return ResponseEntity.created(uri).body("http://localhost:8080/"+site);
+        return ResponseEntity.created(uri).body("http://localhost:8080/" + site);
+
     }
 
 }

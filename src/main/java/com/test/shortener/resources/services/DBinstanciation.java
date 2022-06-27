@@ -1,4 +1,4 @@
-package com.test.shortener.services;
+package com.test.shortener.resources.services;
 
 import com.test.shortener.domain.Link;
 import com.test.shortener.repositories.LinkRepository;

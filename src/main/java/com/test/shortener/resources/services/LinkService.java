@@ -1,4 +1,4 @@
-package com.test.shortener.services;
+package com.test.shortener.resources.services;
 
 import com.test.shortener.domain.Link;
 import com.test.shortener.repositories.LinkRepository;
@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import static com.test.shortener.services.Shortcutting.Shortener;
 
 @Service
 public class LinkService {
@@ -21,15 +19,19 @@ public class LinkService {
     public List<Link> findAll() {
         return linkRepository.findAll();
     }
+
+
     public List<Link> findByCuttedLink(Integer cuttedLink) {
         List<Link> link = linkRepository.findByCuttedLink(cuttedLink);
         return link;
     }
 
+
     public Link create(Link link) {
         link.setId(null);
-        link.setCuttedLink(Shortener(link.getUncuttedLink()));
+        link.setCuttedLink(Shortcutting.Shortener(link.getUncuttedLink()));
         link.setCreationDate(LocalDateTime.now());
         return linkRepository.save(link);
+
     }
 }

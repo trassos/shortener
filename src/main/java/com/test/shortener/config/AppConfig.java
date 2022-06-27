@@ -1,7 +1,7 @@
 package com.test.shortener.config;
 
-import com.test.shortener.services.DBinstanciation;
-import com.test.shortener.services.LinkService;
+import com.test.shortener.resources.services.DBinstanciation;
+import com.test.shortener.resources.services.LinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
